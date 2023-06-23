@@ -2,12 +2,17 @@
     // import your header file
     include_once './layout/header.php';
 
+    $servername = "localhost";
+    $username = "root";
+    $password = "root";
+    $database = "booklist";
+
     // create a Mysql instance for your mysql connection and queries
-    $mysqlInstance = new Mysql();
+    $mysqlInstance = new Mysql ($servername, $username, $password, $database);
 
     // execute get all books for table list
     $bookList = $mysqlInstance->getAllBooks();
-
+    
     // execute get all authors for select options
     $authorsList = $mysqlInstance->getAllAuthors();
 ?>
